@@ -1,24 +1,21 @@
 
-
-
-function createHeader(){
-    let header = document.createElement("h1")
-    header.textContent = "Marcos Pizza"
-    return header
-}
-
 function createDescription(){
     let description = document.createElement("p")
     description.innerText = "Best Pizza in Arlington,TX!"
     return description
 }
 
+function clear_children(div){
+    while(div.firstChild){
+        div.removeChild(div.firstChild)
+    }
+}
 function loadHomePage(){
     
-    let content = document.querySelector("#content")
+    
+    let content = document.querySelector(".details")
+    clear_children(content)
 
-    let header = createHeader()
-    content.appendChild(header)
 
     let description = createDescription()
     content.appendChild(description)
